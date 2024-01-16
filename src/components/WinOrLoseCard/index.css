@@ -1,0 +1,34 @@
+/* Write your code here. */
+
+.winlosecontainer {
+  display: flex;
+  padding: 20px;
+}
+.matterconatiner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.winlose {
+  font-size: 20px;
+  color: #ffffff;
+}
+.best {
+  font-size: 10px;
+  color: #ffffff;
+}
+.outofscore {
+  font-size: 10px;
+  color: #6a59ff;
+}
+.playagain {
+  font-size: 5px;
+  padding: 20px;
+  background-color: #ffce27;
+}
+.winloseimage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

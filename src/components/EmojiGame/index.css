@@ -1,0 +1,17 @@
+/* Write your code here. */
+.maincontainer {
+  background-image: linear-gradient(to bottom, #9796f0, #fbc7d4);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.bottomcontainer {
+  padding: 40px;
+}
+.emojilist {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
