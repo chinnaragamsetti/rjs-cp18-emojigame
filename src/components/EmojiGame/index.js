@@ -20,6 +20,7 @@ import WinOrLoseCard from '../WinOrLoseCard'
 
 // const topScore = 0 repeatedlists: repeatedlist
 const repeatedlist = []
+
 class EmojiGame extends Component {
   state = {score: 0, topscore: 0, repeatedlists: repeatedlist, repeatedcount: 0}
 
@@ -39,10 +40,11 @@ class EmojiGame extends Component {
       this.setState(prevState => ({repeatedcount: prevState.repeatedcount + 1}))
     } else {
       this.setState(prevState => ({
-        score: prevState.score + 1,
+        score: prevState.score + 1,repeatedlists:[...prevState.repeatedlists,id]
       }))
     }
   }
+
 
   display = () => {
     const {score, repeatedcount} = this.state
@@ -61,10 +63,12 @@ class EmojiGame extends Component {
       )
     }
     return {
-      if (repeatedcount !== 0) {
+      if (repeatedcount != 0) {
         return (
           <WinOrLoseCard playedAgain={this.playedAgain} scoredetails={score} />
+          this.setState({topscore:score})
         )
+        
       }
       return (
         <ul className="emojilist">
