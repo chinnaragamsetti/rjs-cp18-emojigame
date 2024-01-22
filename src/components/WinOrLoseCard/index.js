@@ -2,31 +2,32 @@
 import './index.css'
 
 const WinOrLoseCard = props => {
-  const {score,playedAgain} = props
-  const playAgain=()=>{
-      playedAgain()
+  const {scoredetails, playedAgain} = props
+  const {score} = scoredetails
+  const playAgain = () => {
+    playedAgain()
   }
-    if (score===12){
-        return(
-            <div className="winlosecontainer">
-            <div className="mattercontainer">
-                <h1 className="winlose">You Won</h1>
-                <p className="best">Best Score</p>
-                <p className="outofscore">{score}/12</p>
-                <button type="button" className="playagain">
-                Play Again
-                </button>
-            </div>
-            <img
-                src="https://assets.ccbp.in/frontend/react-js/lose-game-img.png"
-                alt="lose"
-                className="winloseimage"
-            />
-            </div>
-        )
-      }
+  if (score === 12) {
     return (
-        <div className="winlosecontainer">
+      <div className="winlosecontainer">
+        <div className="mattercontainer">
+          <h1 className="winlose">You Won</h1>
+          <p className="best">Best Score</p>
+          <p className="outofscore">{score}/12</p>
+          <button type="button" className="playagain">
+            Play Again
+          </button>
+        </div>
+        <img
+          src="https://assets.ccbp.in/frontend/react-js/lose-game-img.png"
+          alt="lose"
+          className="winloseimage"
+        />
+      </div>
+    )
+  }
+  return (
+    <div className="winlosecontainer">
       <div className="mattercontainer">
         <h1 className="winlose">You Lose</h1>
         <p className="best">Best Score</p>
@@ -41,8 +42,6 @@ const WinOrLoseCard = props => {
         className="winloseimage"
       />
     </div>
-    )
-    
   )
 }
 

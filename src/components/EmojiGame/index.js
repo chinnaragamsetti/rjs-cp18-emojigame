@@ -18,68 +18,75 @@ import NavBar from '../NavBar'
 import EmojiCard from '../EmojiCard'
 import WinOrLoseCard from '../WinOrLoseCard'
 
-const topScore=0
+// const topScore = 0 repeatedlists: repeatedlist
+const repeatedlist = []
 class EmojiGame extends Component {
-  state = {score: 0, topscore: 0, unrepeatedList: []}
+  state = {score: 0, topscore: 0, repeatedlists: repeatedlist, repeatedcount: 0}
 
-   let display=<ul className="emojilist">
-            {shuffledEmojisList.map(each => (
-              <EmojiCard
-                eachdetails={each}
-                shuffledEmojisList={this.shuffledEmojisList}
-                key={each.id}
-              />
-            ))}
-          </ul>
+  shuffledEmojisList = () => {
+    const {emojisList} = this.props
+    return emojisList.sort(() => Math.random() - 0.5)
+  }
 
-    playedAgain=()=>{
-        display=<ul className="emojilist">
-            {shuffledEmojisList.map(each => (
-              <EmojiCard
-                eachdetails={each}
-                shuffledEmojisList={this.shuffledEmojisList}
-                key={each.id}
-              />
-            ))}
-          </ul>
+  playedAgain = () => {
+    this.setState({score: 0})
+    // topScore = score
+  }
+
+  onclickedImage = id => {
+    const {repeatedlists} = this.state
+    if (repeatedlists.includes(id)) {
+      this.setState(prevState => ({repeatedcount: prevState.repeatedcount + 1}))
+    } else {
+      this.setState(prevState => ({
+        score: prevState.score + 1,
+      }))
     }
-   shuffledEmojisList = (id) => {
-       const {score,topscore}=this.state
-      if(unrepeatedList.includes(id)){
-          display=<WinOrLoseCard playedAgain={playedAgain} scoredetails={score}/>
-          this.setState({score:0,topscore:score})
-          
-      }
-      else{
-          display=<ul className="emojilist">
-            {shuffledEmojisList.map(each => (
-              <EmojiCard
-                eachdetails={each}
-                shuffledEmojisList={this.shuffledEmojisList}
-                key={each.id}
-              />
-            ))}
-          </ul>
-          this.setState(prevState=>({score:prevState.score+1}))
-      }
+  }
+
+  display = () => {
+    const {score, repeatedcount} = this.state
+    const afterShuffeledlist = this.shuffledEmojisList()
+    if (score === 0) {
+      return (
+        <ul className="emojilist">
+          {afterShuffeledlist.map(each => (
+            <EmojiCard
+              eachdetails={each}
+              onclickedImage={this.onclickedImage}
+              key={each.id}
+            />
+          ))}
+        </ul>
+      )
     }
+    return {
+      if (repeatedcount !== 0) {
+        return (
+          <WinOrLoseCard playedAgain={this.playedAgain} scoredetails={score} />
+        )
+      }
+      return (
+        <ul className="emojilist">
+          {afterShuffeledlist.map(each => (
+            <EmojiCard
+              eachdetails={each}
+              onclickedImage={this.onclickedImage}
+              key={each.id}
+            />
+          ))}
+        </ul>
+      )
+    }
+  }
 
   render() {
-    // const {emojisList} = this.props
     const {score, topscore} = this.state
-
-    const shuffledEmojisList = () => {
-      const {emojisList} = this.props
-      return emojisList.sort(() => Math.random() - 0.5)
-    }
 
     return (
       <div className="maincontainer">
-        <NavBar scoredetails={score} topscoredetails={topscore} />
-        <div className="bottomcontainer">
-        {display}
-          
-        </div>
+        <NavBar scoreDetails={score} topscoreDetails={topscore} />
+        <div className="bottomcontainer">{this.display()}</div>
       </div>
     )
   }

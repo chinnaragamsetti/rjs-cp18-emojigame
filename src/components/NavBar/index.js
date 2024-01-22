@@ -2,10 +2,11 @@
 import './index.css'
 
 const NabBar = props => {
-  const {scoredetails, topscoredetails} = props
-  const {score} = scoredetails
-  const {topscore} = topscoredetails
-  console.log(score)
+  const {scoreDetails, topscoredetails} = props
+  // const {score} = scoreDetails
+  // const {topscore} = topscoredetails
+
+  // console.log(score)
   return (
     <div className="navbarcontainer">
       <div className="logocontainer">
@@ -17,8 +18,8 @@ const NabBar = props => {
         <h1 className="logoheading">Emoji Game</h1>
       </div>
       <div className="scorecontainer">
-        <p className="score">Score: {score}</p>
-        <p className="topscore">Top Score: {topscore}</p>
+        <p className="score">Score: {scoreDetails}</p>
+        <p className="topscore">Top Score: {topscoredetails}</p>
       </div>
     </div>
   )
