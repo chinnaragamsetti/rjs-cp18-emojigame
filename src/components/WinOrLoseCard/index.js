@@ -3,17 +3,19 @@ import './index.css'
 
 const WinOrLoseCard = props => {
   const {scoredetails, playedAgain} = props
-  const {score} = scoredetails
+  // const {score} = scoredetails
+  //  console.log(score)
+  console.log(scoredetails)
   const playAgain = () => {
     playedAgain()
   }
-  if (score === 12) {
+  if (scoredetails === 12) {
     return (
       <div className="winlosecontainer">
         <div className="mattercontainer">
           <h1 className="winlose">You Won</h1>
           <p className="best">Best Score</p>
-          <p className="outofscore">{score}/12</p>
+          <p className="outofscore">{scoredetails}/12</p>
           <button type="button" className="playagain">
             Play Again
           </button>
@@ -30,15 +32,15 @@ const WinOrLoseCard = props => {
     <div className="winlosecontainer">
       <div className="mattercontainer">
         <h1 className="winlose">You Lose</h1>
-        <p className="best">Best Score</p>
-        <p className="outofscore">{score}/12</p>
+        <p className="best">Score</p>
+        <p className="outofscore">{scoredetails}/12</p>
         <button type="button" onClick={playAgain} className="playagain">
           Play Again
         </button>
       </div>
       <img
         src="https://assets.ccbp.in/frontend/react-js/lose-game-img.png"
-        alt="lose"
+        alt="win"
         className="winloseimage"
       />
     </div>

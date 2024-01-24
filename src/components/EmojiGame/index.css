@@ -6,16 +6,16 @@
   flex-direction: column;
 }
 .bottomcontainer {
-  padding: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 90%;
+  padding-left: 0px;
 }
 .emojilist {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+
   list-style-type: none;
 }

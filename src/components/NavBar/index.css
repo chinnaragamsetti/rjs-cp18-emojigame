@@ -1,35 +1,39 @@
 /* Write your code here. */
+@media screen and (max-width: 576px) {
+  .navbarcontainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #9796f0;
+    height: 10%;
+    padding-left: 30px;
+    padding-right: 30px;
+    box-sizing: border-box;
+  }
+  .logocontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .logo {
+    width: 20px;
+    height: 20px;
+  }
+  .logoheading {
+    font-size: 10px;
+    color: #ffffff;
+  }
+  .scorecontainer {
+    display: flex;
+    color: #ffffff;
+    justify-content: space-between;
+  }
 
-.navbarcontainer {
-  display: flex;
-  justify-content: space-between;
-  padding-left: 60px;
-  padding-right: 60px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-color: #9796f0;
-}
-.logocontainer {
-  display: flex;
-}
-.logo {
-  width: 50px;
-  height: 50px;
-}
-.logoheading {
-  font-size: 20px;
-  color: #ffffff;
-}
-.scorecontainer {
-  display: flex;
-  color: #ffffff;
-  justify-content: space-between;
-}
-
-.score {
-  font-size: 20px;
-  margin-right: 30px;
-}
-.topscore {
-  font-size: 20px;
+  .score {
+    font-size: 10px;
+    margin-right: 30px;
+  }
+  .topscore {
+    font-size: 10px;
+  }
 }
