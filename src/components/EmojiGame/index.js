@@ -77,7 +77,7 @@ class EmojiGame extends Component {
         </ul>
       )
     }
-    return repeatedcount !== 0 ? (
+    return repeatedcount !== 0 || score === 12 ? (
       <WinOrLoseCard playedAgain={this.playedAgain} scoredetails={score} />
     ) : (
       <ul className="emojilist">
