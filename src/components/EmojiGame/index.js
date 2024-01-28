@@ -52,7 +52,7 @@ class EmojiGame extends Component {
 
     if (repeatedlists.includes(id)) {
       this.setState(prevState => ({repeatedcount: prevState.repeatedcount + 1}))
-      console.log(true)
+      // console.log(true)
     } else {
       this.setState(prevState => ({
         score: prevState.score + 1,
