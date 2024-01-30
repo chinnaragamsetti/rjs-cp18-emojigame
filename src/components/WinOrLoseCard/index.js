@@ -22,7 +22,7 @@ const WinOrLoseCard = props => {
         </div>
         <img
           src="https://assets.ccbp.in/frontend/react-js/lose-game-img.png"
-          alt="lose"
+          alt="win or lose"
           className="winloseimage"
         />
       </div>
@@ -40,7 +40,7 @@ const WinOrLoseCard = props => {
       </div>
       <img
         src="https://assets.ccbp.in/frontend/react-js/lose-game-img.png"
-        alt="win"
+        alt="win or lose"
         className="winloseimage"
       />
     </div>
