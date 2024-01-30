@@ -64,6 +64,7 @@ class EmojiGame extends Component {
   display = () => {
     const {score, repeatedcount} = this.state
     const afterShuffeledlist = this.shuffledEmojisList()
+    console.log(afterShuffeledlist)
     if (score === 0) {
       return (
         <ul className="emojilist">

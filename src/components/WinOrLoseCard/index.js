@@ -9,6 +9,7 @@ const WinOrLoseCard = props => {
   const playAgain = () => {
     playedAgain()
   }
+
   if (scoredetails === 12) {
     return (
       <div className="winlosecontainer">
