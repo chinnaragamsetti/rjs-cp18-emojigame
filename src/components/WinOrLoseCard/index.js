@@ -22,7 +22,7 @@ const WinOrLoseCard = props => {
           </button>
         </div>
         <img
-          src="https://assets.ccbp.in/frontend/react-js/lose-game-img.png"
+          src="https://assets.ccbp.in/frontend/react-js/won-game-img.png"
           alt="win or lose"
           className="winloseimage"
         />
